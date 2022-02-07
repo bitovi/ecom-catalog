@@ -1,0 +1,11 @@
+{
+    "products": [
+      {
+          "id": "522-2222",
+          "modifiers": [{
+              "id": "3222",
+              "price": 220
+          }], 
+          "basePrice": 2222}
+    ]
+}
