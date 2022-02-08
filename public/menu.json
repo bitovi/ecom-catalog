@@ -1,11 +1,32 @@
 {
-    "products": [
-      {
-          "id": "522-2222",
-          "modifiers": [{
-              "id": "3222",
-              "price": 220
-          }], 
-          "basePrice": 2222}
-    ]
+  "products": [
+    {
+      "slug": "blackened-cajun-chicken-sandwich",
+      "basePrice": 11.99,
+      "modifiers": [{
+        "id": "3222",
+        "price": 220
+      }]
+    },
+    {
+      "slug": "mushroom-steak-and-mushrooms",
+      "basePrice": 19.79
+    },
+    {
+      "slug": "ultimate-cheesy-bacon-cheeseburger",
+      "basePrice": 16.99
+    },
+    {
+      "slug": "blackened-chicken-alfredo-pasta",
+      "basePrice": 17.79
+    },
+    {
+      "slug": "fried-mushrooms",
+      "basePrice": 11.09
+    },
+    {
+      "slug": "sizzling-cheesy-bacon-mac-and-cheese-bites",
+      "basePrice": 11.09
+    }
+  ]
 }
