@@ -1,11 +1,41 @@
 {
-    "products": [
-      {
-          "id": "522-2222",
-          "modifiers": [{
-              "id": "3222",
-              "price": 220
-          }], 
-          "basePrice": 2222}
-    ]
+  "products": [
+    {
+      "id": "3ceb5839-2e64-43e1-aa52-4e01e267790a",
+      "slug": "blackened-cajun-chicken-sandwich",
+      "basePrice": 1199,
+      "modifiers": [
+        {
+          "id": "6a8acfcc-519b-4708-b786-77edc23e07f0",
+          "slug": "onion-rings",
+          "price": 149
+        }
+      ]
+    },
+    {
+      "id": "f6f32ac4-e5e1-4a5c-a819-a7430fe7a5c5",
+      "slug": "mushroom-steak-and-mushrooms",
+      "basePrice": 1979
+    },
+    {
+      "id": "f849b507-46ed-4399-86e2-7e005bfdfa4d",
+      "slug": "ultimate-cheesy-bacon-cheeseburger",
+      "basePrice": 1699
+    },
+    {
+      "id": "b142d21d-16fd-424f-bd27-990ee77c4ae5",
+      "slug": "blackened-chicken-alfredo-pasta",
+      "basePrice": 1779
+    },
+    {
+      "id": "329dd25e-4423-4ff0-bd13-7b58fc9fbd0d",
+      "slug": "fried-mushrooms",
+      "basePrice": 1109
+    },
+    {
+      "id": "e271e1fb-f118-42c1-9a0b-c578747d8c75",
+      "slug": "sizzling-cheesy-bacon-mac-and-cheese-bites",
+      "basePrice": 1109
+    }
+  ]
 }
