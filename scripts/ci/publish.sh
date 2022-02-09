@@ -3,8 +3,43 @@
 set -e
 
 
+# ###
+# ### PUBLISH - environment setup
+# ###
+
+# Defining the Default branch variable
+if [ -z "$DEFAULT_BRANCH" ]; then
+    DEFAULT_BRANCH="main"
+fi
+
+# Defining the Branch name variable
+TAG_OR_HEAD="$(echo $GITHUB_REF | cut -d / -f2)"
+BRANCH_OR_TAG_NAME=$(echo $GITHUB_REF | cut -d / -f3)
+echo "TAG_OR_HEAD: $TAG_OR_HEAD"
+echo "BRANCH_OR_TAG_NAME: $BRANCH_OR_TAG_NAME"
+
+
+# if tag, use tag
+# if default branch, use `latest`
+# if otherwise, use branch name
+if [ -z "$APP_VERSION" ]; then
+  if [ -n "$USE_COMMIT_HASH_FOR_ARTIFACTS" ]; then
+    APP_VERSION="$GITHUB_SHA"
+  else
+    if [ "$TAG_OR_HEAD" == "tags" ]; then
+      APP_VERSION="$BRANCH_OR_TAG_NAME"
+    elif [ "$TAG_OR_HEAD" == "heads" ] && [ "$BRANCH_OR_TAG_NAME" == "$DEFAULT_BRANCH" ]; then
+      APP_VERSION="latest"
+    elif [ "$TAG_OR_HEAD" == "pull" ]; then
+      APP_VERSION="pr-${BRANCH_OR_TAG_NAME}"
+    else
+      APP_VERSION="$BRANCH_OR_TAG_NAME"
+    fi
+  fi
+fi
+
 # PUBLISH_S3_BUCKET
-S3_PATH_PREFIX="ecom-catalog/$GITHUB_SHA"
+S3_PATH_PREFIX="ecom-catalog/$APP_VERSION"
 S3_FULL_PATH="$PUBLISH_S3_BUCKET/${S3_PATH_PREFIX}"
 
 echo "push to s3:"
